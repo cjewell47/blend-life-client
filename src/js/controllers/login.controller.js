@@ -3,15 +3,15 @@ angular
   .controller('LoginCtrl', LoginCtrl);
 
 
-LoginCtrl.$inject = ['User', 'TokenService'];
-function LoginCtrl(User, TokenService) {
+LoginCtrl.$inject = ['User'];
+function LoginCtrl(User) {
   const vm = this;
 
   vm.login = () => {
     User.login(vm.user)
     .$promise
     .then(data => {
-      TokenService.setToken(data.token);
+    console.log(data);
     }, err => {
       console.log(err);
     });
