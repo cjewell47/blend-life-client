@@ -1,0 +1,49 @@
+<div>
+<h1>Register</h1>
+<form name="vm.registerForm" ng-submit="vm.register()" novalidate>
+  <div class="form-group">
+    <label for="name">Username</label><br>
+    <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="Username" required>
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.registerForm.username.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.username.$touched)">
+    <p ng-message="required">A username is required!</p>
+  </div>
+
+<div class="form-group">
+  <label for="image">Image</label><br>
+  <input class="form-control" type="text" name="image" ng-model="vm.user.image" placeholder="copy image url here...">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Email</label><br>
+    <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="e.g. lebron@james.com" required ng-pattern="vm.emailValidate">
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.registerForm.email.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.email.$touched)">
+    <p ng-message="required">An email address is required!</p>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Password</label><br>
+    <input class="form-control"  type="password" name="password" ng-model="vm.user.password" placeholder="at least 6 characters" required ng-minlength="6">
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.registerForm.password.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.password.$touched)">
+    <p ng-message="required">An password is required!</p>
+    <p ng-message="minlength">Your password must be at least 6 characters</p>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Password Confirmation</label><br>
+    <input class="form-control" type="password" name="password_confirmation" ng-model="vm.user.password_confirmation" placeholder="retype your password" required ng-pattern="vm.user.password">
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.registerForm.passwordConfirmation.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.passwordConfirmation.$touched)">
+    <p ng-message="required">Please confirm your password</p>
+    <p ng-message="pattern">Your passwords must match</p>
+  </div>
+
+  <input class="btn btn-primary loginButton" type="submit" value="Submit" />
+</form>
+</div>
