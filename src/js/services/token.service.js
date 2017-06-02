@@ -18,4 +18,8 @@ function TokenService($window, jwtHelper) {
   self.getToken = () => {
     return $window.localStorage.getItem('auth-token');
   };
+
+  self.removeToken = () => {
+    $window.localStorage.clear();
+  };
 }
