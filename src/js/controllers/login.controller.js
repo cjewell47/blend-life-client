@@ -3,8 +3,8 @@ angular
   .controller('LoginCtrl', LoginCtrl);
 
 
-LoginCtrl.$inject = ['User', 'CurrentUserService'];
-function LoginCtrl(User, CurrentUserService) {
+LoginCtrl.$inject = ['User', 'CurrentUserService', '$state'];
+function LoginCtrl(User, CurrentUserService, $state) {
   const vm = this;
 
   vm.login = () => {
@@ -12,6 +12,7 @@ function LoginCtrl(User, CurrentUserService) {
     .$promise
     .then(() => {
       CurrentUserService.getUser();
+      $state.go('home');
     }, err => {
       console.log(err);
     });

@@ -2,8 +2,8 @@ angular
   .module('BlendLife')
   .controller('RegisterCtrl', RegisterCtrl);
 
-RegisterCtrl.$inject = ['User', 'CurrentUserService'];
-function RegisterCtrl(User, CurrentUserService) {
+RegisterCtrl.$inject = ['User', 'CurrentUserService', '$state'];
+function RegisterCtrl(User, CurrentUserService, $state) {
   const vm    = this;
   vm.emailValidate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -16,6 +16,7 @@ function RegisterCtrl(User, CurrentUserService) {
       .$promise
       .then(() => {
         CurrentUserService.getUser();
+        $state.go('home');
       }, err => {
         console.log(err);
       });

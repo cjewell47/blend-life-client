@@ -1,5 +1,5 @@
 angular
-  .module('FruitApp')
+  .module('BlendLife')
   .config(Router);
 
 Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
