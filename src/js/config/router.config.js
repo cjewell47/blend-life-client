@@ -22,6 +22,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: '/js/views/login.html',
     controller: 'LoginCtrl',
     controllerAs: 'vm'
+  })
+  .state('recipeIndex', {
+    url: '/recipes',
+    templateUrl: '/js/views/recipes/index.html',
+    controller: 'RecipeIndexCtrl',
+    controllerAs: 'vm'
   });
   $urlRouterProvider.otherwise('/');
 }
