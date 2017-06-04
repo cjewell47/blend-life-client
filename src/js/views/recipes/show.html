@@ -1,0 +1,9 @@
+<h1>{{ vm.recipe.name }}</h1>
+
+    <p>{{ vm.recipe.description }}</p>
+    <p>Ingredients:</p> <ul>
+      <li ng-repeat="ingredient in vm.recipe.ingredients">
+      <p>{{ ingredient.name }}</p>
+      <img ng-src="{{ ingredient.image }}"></li>
+    </ul>
+    <p>Submitted by: {{ vm.recipe.user.username }}</p>
