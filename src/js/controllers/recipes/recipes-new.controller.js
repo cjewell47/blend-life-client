@@ -13,6 +13,8 @@ function RecipeNewCtrl (Recipe, $state, Ingredient) {
     vm.ingredients = ingredients;
   });
 
+//  On the newRecipe form, have a form within the form that pushes the ingredients into an array. As this is happening it is taking an average colour from those ingredients and displaying it. Then when the outside form is submitted the entire array of ingredients is pushed into the recipe object. 
+//
   vm.create= recipeCreate;
   function recipeCreate(){
     console.log('vm.recipe:', vm.recipe);
