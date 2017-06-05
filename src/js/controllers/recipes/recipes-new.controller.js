@@ -21,10 +21,11 @@ function RecipeNewCtrl (Recipe, $state, Ingredient) {
       .save({ recipe: {
         name: vm.recipe.name,
         description: vm.recipe.description,
-        ingredient_ids: [vm.recipe.ingredients]
+        ingredient_ids: vm.recipe.ingredients
       }})
       .$promise
-      .then(() => {
+      .then((recipe) => {
+        console.log(recipe);
         $state.go('recipeIndex');
       })
       .catch(err => {
