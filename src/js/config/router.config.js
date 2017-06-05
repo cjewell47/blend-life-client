@@ -23,6 +23,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'LoginCtrl',
     controllerAs: 'vm'
   })
+  .state('recipeNew', {
+    url: '/recipes/new',
+    templateUrl: '/js/views/recipes/new.html',
+    controller: 'RecipeNewCtrl',
+    controllerAs: 'vm'
+  })
   .state('recipeIndex', {
     url: '/recipes',
     templateUrl: '/js/views/recipes/index.html',
@@ -35,11 +41,6 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'RecipeShowCtrl',
     controllerAs: 'vm'
   })
-  .state('recipeNew', {
-    url: '/recipes/new',
-    templateUrl: '/js/views/recipes/new.html',
-    controller: 'RecipeNewCtrl',
-    controllerAs: 'vm'
-  });
+  ;
   $urlRouterProvider.otherwise('/');
 }

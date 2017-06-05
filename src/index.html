@@ -26,6 +26,9 @@
           <a ui-sref="recipeIndex">See our recipes</a>
         </li>
         <li ng-show="main.user">
+          <a ui-sref="recipeNew">Submit a recipe</a>
+        </li>
+        <li ng-show="main.user">
           <a ng-click="main.logout()">Logout</a>
         </li>
       </ul>

@@ -1,0 +1,24 @@
+<div>
+<h1>Submit a recipe</h1>
+<form name="vm.addRecipeForm" ng-submit="vm.create()" novalidate class="measure center">
+  <div class="form-group">
+    <label for="name">Name</label><br>
+    <input class="form-control" type="text" name="name" ng-model="vm.recipe.name" placeholder="Name of your recipe..." required>
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.addRecipeForm.name.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.username.$touched)">
+    <p ng-message="required">Recipes need to have a name</p>
+  </div>
+
+<div class="form-group">
+  <label for="description">Description</label><br>
+  <textarea type="text" id="description" name="description" ng-model="vm.recipe.description" class="form-control" placeholder="Write the description of your recipe here" required></textarea>
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.addRecipeForm.description.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.description.$touched)">
+    <p ng-message="required">Recipes need to have a description!</p>
+  </div>
+
+  <input type="submit" value="Submit" />
+</form>
+</div>
