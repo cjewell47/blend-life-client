@@ -18,7 +18,11 @@ function RecipeNewCtrl (Recipe, $state, Ingredient) {
     console.log('vm.recipe:', vm.recipe);
     if (vm.addRecipeForm.$valid) {
       Recipe
-      .save(vm.recipe)
+      .save({ recipe: {
+        name: vm.recipe.name,
+        description: vm.recipe.description,
+        ingredient_ids: [vm.recipe.ingredients]
+      }})
       .$promise
       .then(() => {
         $state.go('recipeIndex');
