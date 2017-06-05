@@ -6,7 +6,7 @@
     <input class="form-control" type="text" name="name" ng-model="vm.recipe.name" placeholder="Name of your recipe..." required>
   </div>
 
-  <div class="ng-message-error" ng-messages="vm.addRecipeForm.name.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.username.$touched)">
+  <div class="ng-message-error" ng-messages="vm.addRecipeForm.name.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.name.$touched)">
     <p ng-message="required">Recipes need to have a name</p>
   </div>
 
@@ -17,6 +17,17 @@
 
   <div class="ng-message-error" ng-messages="vm.addRecipeForm.description.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.description.$touched)">
     <p ng-message="required">Recipes need to have a description!</p>
+  </div>
+
+  <div class="form-group">
+    <label for="ingredients">Ingredients</label><br>
+    <select id="ingredients"  name="ingredients" ng-model="vm.recipe.ingredients" class="form-control" required>
+      <option ng-repeat="ingredient in vm.ingredients" value="{{ ingredient }}">{{ ingredient.name }}</option>
+    </select>
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.addRecipeForm.ingredients.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.ingredients.$touched)">
+    <p ng-message="required">Recipes need to have at least one ingredient!</p>
   </div>
 
   <input type="submit" value="Submit" />
