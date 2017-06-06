@@ -23,7 +23,7 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, filterFilter, $scope) {
     const params = vm.recipe.ingredient_ids;
     vm.selectedIngredients = [];
     params.forEach(id => {
-      vm.selectedIngredients.push(filterFilter(vm.ingredients, {id: id})[0].name);
+      vm.selectedIngredients.push(filterFilter(vm.ingredients, {id: id})[0].colour);
     });
   }
 
