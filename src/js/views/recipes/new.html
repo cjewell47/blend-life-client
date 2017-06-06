@@ -19,24 +19,31 @@
     <p ng-message="required">Recipes need to have a description!</p>
   </div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="ingredients">Ingredients</label><br>
     <select multiple id="ingredients"  name="ingredients" ng-model="vm.recipe.ingredient_ids" class="form-control" required>
       <option ng-repeat="ingredient in vm.ingredients" value="{{ ingredient.id }}">{{ ingredient.name }}</option>
     </select>
+  </div> -->
+
+  <div class="ingredientSelector">
+    <label for="ingredients">Ingredients</label><br>
+    <select id="ingredients"  name="ingredientSelector" ng-model="vm.selected" class="form-control" required>
+      <option ng-repeat="ingredient in vm.ingredients" value="{{ ingredient }}">{{ ingredient.name }}</option>
+    </select>
+    <!-- <button ng-click="select()">Add this ingredient</button> -->
+  </div>
+  {{ vm.selected }}
+
+
+  <!-- {{ vm.recipe.ingredient_ids }} -->
+  <!-- {{ vm.selectedIngredients }} -->
+  <div ng-style="{ 'background-color': 'rgb({{vm.selected[0].colour }})' }" class="smoothie h5 w5 br-100 b--black shadow-3 ma3">
   </div>
 
-  <!-- <ul>
-    <li ng-repeat="ingredient in vm.ingredients"><span ng-if="vm.recipe.ingredients.indexOf(ingredient.id) != -1 ">{{ ingredient.id }}</span></li>
-  </ul> -->
-  {{ vm.recipe.ingredient_ids }}
-  {{ vm.selectedIngredients }}
-  <!-- {{ vm.ingredients | vm.recipe.ingredients }} -->
-
-
-  <div class="ng-message-error" ng-messages="vm.addRecipeForm.ingredients.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.ingredients.$touched)">
+  <!-- <div class="ng-message-error" ng-messages="vm.addRecipeForm.ingredients.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.ingredients.$touched)">
     <p ng-message="required">Recipes need to have at least one ingredient!</p>
-  </div>
+  </div> -->
 
   <input type="submit" value="Submit" />
 </form>

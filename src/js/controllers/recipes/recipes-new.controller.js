@@ -19,24 +19,30 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, filterFilter, $scope) {
     vm.ingredients = ingredients;
   });
 
-  function filterIngredients() {
-    const params = vm.recipe.ingredient_ids;
-    vm.selectedIngredients = [];
-    params.forEach(id => {
-      vm.selectedIngredients.push(filterFilter(vm.ingredients, {id: id})[0].colour);
-    });
-  }
+  // function filterIngredients() {
+  //   const params = vm.recipe.ingredient_ids;
+  //   vm.selectedIngredients = [];
+  //   params.forEach(id => {
+  //     vm.selectedIngredients.push(filterFilter(vm.ingredients, {id: id})[0].colour);
+  //   });
+  // }
 
   vm.create= recipeCreate;
+  vm.selected = [];
+  vm.select = select;
+  function select() {
+    var elements = document.getElementsByTagName('select');
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].selectedIndex = 0;
+    }
+  }
+
   function recipeCreate(){
     console.log('vm.recipe:', vm.recipe);
     if (vm.addRecipeForm.$valid) {
       Recipe
-      .save({ recipe:
-        // name: vm.recipe.name,
-        // description: vm.recipe.description,
-        // ingredient_ids: vm.recipe.ingredients
-        vm.recipe
+      .save({
+        recipe: vm.recipe
       })
       .$promise
       .then((recipe) => {
@@ -48,5 +54,5 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, filterFilter, $scope) {
       });
     }
   }
-  $scope.$watch(() => vm.recipe.ingredient_ids, filterIngredients);
+  // $scope.$watch(() => vm.recipe.ingredient_ids, filterIngredients);
 }
