@@ -21,16 +21,22 @@
 
   <div class="form-group">
     <label for="ingredients">Ingredients</label><br>
-    <select multiple id="ingredients"  name="ingredients" ng-model="vm.recipe.ingredients" class="form-control" required>
+    <select multiple id="ingredients"  name="ingredients" ng-model="vm.recipe.ingredient_ids" class="form-control" required>
       <option ng-repeat="ingredient in vm.ingredients" value="{{ ingredient.id }}">{{ ingredient.name }}</option>
     </select>
   </div>
+
+  <!-- <ul>
+    <li ng-repeat="ingredient in vm.ingredients"><span ng-if="vm.recipe.ingredients.indexOf(ingredient.id) != -1 ">{{ ingredient.id }}</span></li>
+  </ul> -->
+  {{ vm.recipe.ingredient_ids }}
+  {{ vm.selectedIngredients }}
+  <!-- {{ vm.ingredients | vm.recipe.ingredients }} -->
 
 
   <div class="ng-message-error" ng-messages="vm.addRecipeForm.ingredients.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.ingredients.$touched)">
     <p ng-message="required">Recipes need to have at least one ingredient!</p>
   </div>
-
 
   <input type="submit" value="Submit" />
 </form>

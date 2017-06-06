@@ -2,9 +2,15 @@ angular
   .module('BlendLife')
   .controller('RecipeNewCtrl', RecipeNewCtrl);
 
-RecipeNewCtrl.$inject = ['Recipe', '$state', 'Ingredient'];
-function RecipeNewCtrl (Recipe, $state, Ingredient) {
+RecipeNewCtrl.$inject = ['Recipe', '$state', 'Ingredient', 'filterFilter', '$scope'];
+function RecipeNewCtrl (Recipe, $state, Ingredient, filterFilter, $scope) {
   const vm = this;
+
+  vm.recipe = {
+    name: '',
+    description: '',
+    ingredient_ids: []
+  };
 
   Ingredient
   .query()
@@ -13,18 +19,25 @@ function RecipeNewCtrl (Recipe, $state, Ingredient) {
     vm.ingredients = ingredients;
   });
 
-//  On the newRecipe form, have a form within the form that pushes the ingredients into an array. As this is happening it is taking an average colour from those ingredients and displaying it. Then when the outside form is submitted the entire array of ingredients is pushed into the recipe object. 
-//
+  function filterIngredients() {
+    const params = vm.recipe.ingredient_ids;
+    vm.selectedIngredients = [];
+    params.forEach(id => {
+      vm.selectedIngredients.push(filterFilter(vm.ingredients, {id: id})[0].name);
+    });
+  }
+
   vm.create= recipeCreate;
   function recipeCreate(){
     console.log('vm.recipe:', vm.recipe);
     if (vm.addRecipeForm.$valid) {
       Recipe
-      .save({ recipe: {
-        name: vm.recipe.name,
-        description: vm.recipe.description,
-        ingredient_ids: vm.recipe.ingredients
-      }})
+      .save({ recipe:
+        // name: vm.recipe.name,
+        // description: vm.recipe.description,
+        // ingredient_ids: vm.recipe.ingredients
+        vm.recipe
+      })
       .$promise
       .then((recipe) => {
         console.log(recipe);
@@ -35,4 +48,5 @@ function RecipeNewCtrl (Recipe, $state, Ingredient) {
       });
     }
   }
+  $scope.$watch(() => vm.recipe.ingredient_ids, filterIngredients);
 }
