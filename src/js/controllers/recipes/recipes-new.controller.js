@@ -16,7 +16,7 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
   vm.selectIngredient    = selectIngredient;
 
   function selectIngredient(event, ingredient) {
-    if(vm.selectedIngredients.length < 8) {
+    if(vm.selectedIngredients.length < 8 || vm.selectedIngredients.indexOf(ingredient) !== -1) {
       vm.selectedIngredients.indexOf(ingredient) === -1 ? vm.selectedIngredients.push(ingredient) : vm.selectedIngredients.splice(vm.selectedIngredients.indexOf(ingredient), 1);
     } else {
       vm.IsClickEnable = false;
@@ -36,6 +36,19 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
     } else {
       percents = new Array(colors.length).fill(100 / colors.length);
     }
+    // const percentageOfEach = parseFloat(100/colors.length);
+    // console.log('percentageOfEach*colors.length:', percentageOfEach*colors.length);
+    // if (100 === percentageOfEach*colors.length) {
+    //   percents = new Array(colors.length).fill(100 / colors.length);
+    // } else {
+    //   const remainder = 100-parseFloat(percentageOfEach*colors.length);
+    //   const percentageOfLast = percentageOfEach+remainder;
+    //   console.log('remainder:', remainder);
+    //   console.log('percentageOfLast:', percentageOfLast);
+    //   console.log('percentageOfEach:', percentageOfEach);
+    //   percents = new Array(colors.length-1).fill(100 / colors.length);
+    //   percents.push(percentageOfLast);
+    // }
 
     console.log(percents);
 
