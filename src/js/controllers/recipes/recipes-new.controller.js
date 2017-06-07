@@ -8,6 +8,7 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
 
   const ColorMix = $window.ColorMix;
 
+  vm.IsClickEnable = true;
   vm.combinationColor    = null;
   vm.selectedIngredients = [];
   vm.ingredients         = Ingredient.query();
@@ -15,7 +16,11 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
   vm.selectIngredient    = selectIngredient;
 
   function selectIngredient(event, ingredient) {
-    vm.selectedIngredients.indexOf(ingredient) === -1 ? vm.selectedIngredients.push(ingredient) : vm.selectedIngredients.splice(vm.selectedIngredients.indexOf(ingredient), 1);
+    if(vm.selectedIngredients.length < 8) {
+      vm.selectedIngredients.indexOf(ingredient) === -1 ? vm.selectedIngredients.push(ingredient) : vm.selectedIngredients.splice(vm.selectedIngredients.indexOf(ingredient), 1);
+    } else {
+      vm.IsClickEnable = false;
+    }
 
     const colors = vm.selectedIngredients.map(ingredient => {
       const arr = ingredient.colour.split(/\s*,\s*/).map(Number);
