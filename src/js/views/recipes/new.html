@@ -26,42 +26,14 @@
           {{ ingredient.name }}
         </li>
       </ul>
-      {{ vm.selectedIngredients }}
     </div>
 
+    <div style="background-color: rgb({{ vm.selectedIngredients[0].colour }})" class="smoothie h5 w5 br-100 b--black shadow-3 ma3">
+    </div>
 
+    <!-- <div ng-style="{ 'background-color': 'rgb(99, 100, 3)' }" class="smoothie h5 w5 br-100 b--black shadow-3 ma3">
+    </div> -->
 
-    <!-- <div class="form-group">
-    <label for="ingredients">Ingredients</label><br>
-    <select multiple id="ingredients"  name="ingredients" ng-model="vm.recipe.ingredient_ids" class="form-control" required>
-    <option ng-repeat="ingredient in vm.ingredients" value="{{ ingredient.id }}">{{ ingredient.name }}</option>
-  </select>
-</div> -->
-
-
-<!-- <div class="ingredientSelector">
-<label for="ingredients">Ingredients</label><br>
-<select id="ingredients"  name="ingredientSelector" ng-model="vm.selected" class="form-control" required>
-<option ng-repeat="ingredient in vm.ingredients" value="{{ ingredient }}">{{ ingredient.name }}</option>
-</select>
-<button ng-click="select()">Add this ingredient</button>
-</div>
-{{ vm.selected }} -->
-<!-- {{ vm.selected }}
-<ul class="ng-scope">
-<li ng-repeat="ingredient in vm.ingredients"><a ng-click=$paren"t.vm.select(ingredient)">{{ ingredient.name }}</a></li>
-</ul> -->
-
-
-<!-- {{ vm.recipe.ingredient_ids }} -->
-<!-- {{ vm.selectedIngredients }} -->
-<div ng-style="{ 'background-color': 'rgb({{vm.selected[0].colour }})' }" class="smoothie h5 w5 br-100 b--black shadow-3 ma3">
-</div>
-
-<!-- <div class="ng-message-error" ng-messages="vm.addRecipeForm.ingredients.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.ingredients.$touched)">
-<p ng-message="required">Recipes need to have at least one ingredient!</p>
-</div> -->
-
-<input type="submit" value="Submit" />
+  <input type="submit" value="Submit" />
 </form>
 </div>
