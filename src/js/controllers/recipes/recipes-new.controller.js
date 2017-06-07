@@ -1,58 +1,62 @@
 angular
-  .module('BlendLife')
-  .controller('RecipeNewCtrl', RecipeNewCtrl);
+.module('BlendLife')
+.controller('RecipeNewCtrl', RecipeNewCtrl);
 
-RecipeNewCtrl.$inject = ['Recipe', '$state', 'Ingredient', 'filterFilter', '$scope'];
-function RecipeNewCtrl (Recipe, $state, Ingredient, filterFilter, $scope) {
+RecipeNewCtrl.$inject = ['Recipe', '$state', 'Ingredient', 'filterFilter'];
+function RecipeNewCtrl (Recipe, $state, Ingredient, filterFilter) {
   const vm = this;
 
-  vm.recipe = {
-    name: '',
-    description: '',
-    ingredient_ids: []
-  };
+  vm.selectedIngredients = [];
+  vm.ingredients         = Ingredient.query();
+  vm.create              = recipeCreate;
+  vm.selectIngredient    = selectIngredient;
 
-  Ingredient
-  .query()
-  .$promise
-  .then(ingredients => {
-    vm.ingredients = ingredients;
-  });
-
-  // function filterIngredients() {
-  //   const params = vm.recipe.ingredient_ids;
-  //   vm.selectedIngredients = [];
-  //   params.forEach(id => {
-  //     vm.selectedIngredients.push(filterFilter(vm.ingredients, {id: id})[0].colour);
-  //   });
-  // }
-
-  vm.create= recipeCreate;
-  vm.selected = [];
-  vm.select = select;
-  function select() {
-    var elements = document.getElementsByTagName('select');
-    for (var i = 0; i < elements.length; i++) {
-      elements[i].selectedIndex = 0;
-    }
+  function selectIngredient(event, ingredient) {
+    vm.selectedIngredients.indexOf(ingredient) === -1 ? vm.selectedIngredients.push(ingredient) : vm.selectedIngredients.splice(vm.selectedIngredients.indexOf(ingredient), 1);
   }
 
   function recipeCreate(){
-    console.log('vm.recipe:', vm.recipe);
+    // filter vm.selectedIngredients into a new array containing just id's from ingredients
+    
+    vm.recipe.ingredients = vm.selectedIngredients;
+
     if (vm.addRecipeForm.$valid) {
       Recipe
       .save({
         recipe: vm.recipe
       })
       .$promise
-      .then((recipe) => {
-        console.log(recipe);
+      .then(() => {
         $state.go('recipeIndex');
+        vm.selectedIngredients = [];
       })
       .catch(err => {
         console.log(err);
       });
     }
   }
-  // $scope.$watch(() => vm.recipe.ingredient_ids, filterIngredients);
 }
+
+// vm.select = select;
+
+// function filterIngredients() {
+//   const params = vm.recipe.ingredient_ids;
+//   vm.selectedIngredients = [];
+//   params.forEach(id => {
+//     vm.selectedIngredients.push(filterFilter(vm.ingredients, {id: id})[0].colour);
+//   });
+// }
+
+// function select($scope) {
+//   console.log('scope ingredient', $scope.ingredient);
+//   console.log(vm.selected);
+//   if(vm.selected.indexOf($scope.ingredient) === -1) {
+//     vm.selected.push($scope.ingredient);
+//   } else {
+//     for(var i = 0; i < vm.selected.length; i++) {
+//       if(vm.selected[i] === $scope.ingredient) {
+//         vm.selected.splice(i, 1);
+//       }
+//     }
+//   }
+// }
