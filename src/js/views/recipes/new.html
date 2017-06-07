@@ -1,5 +1,8 @@
 <div>
   <h1>Submit a recipe</h1>
+
+  {{ vm.selectedIngredients }}
+
   <form name="vm.addRecipeForm" ng-submit="vm.create()" novalidate class="measure center">
     <div class="form-group">
       <label for="name">Name</label><br>
@@ -28,11 +31,8 @@
       </ul>
     </div>
 
-    <div style="background-color: rgb({{ vm.selectedIngredients[0].colour }})" class="smoothie h5 w5 br-100 b--black shadow-3 ma3">
+    <div style="background-color: rgb({{ vm.combinationColor }})" class="smoothie h5 w5 br-100 b--black shadow-3 ma3">
     </div>
-
-    <!-- <div ng-style="{ 'background-color': 'rgb(99, 100, 3)' }" class="smoothie h5 w5 br-100 b--black shadow-3 ma3">
-    </div> -->
 
   <input type="submit" value="Submit" />
 </form>

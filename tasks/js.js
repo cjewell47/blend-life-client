@@ -14,7 +14,7 @@ const config           = require('../package').gulp;
 const replace          = require('gulp-replace');
 
 const fetchVendorJs = () => {
-  return gulp.src(bowerFiles(config.selectors.js))
+  return gulp.src(bowerFiles(config.selectors.js).concat([`${config.srcDir}vendor/**.js`]))
     .pipe(concat(config.vendor.js));
 };
 
