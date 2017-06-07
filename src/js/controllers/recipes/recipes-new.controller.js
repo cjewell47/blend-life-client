@@ -17,8 +17,10 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, filterFilter) {
 
   function recipeCreate(){
     // filter vm.selectedIngredients into a new array containing just id's from ingredients
-    
-    vm.recipe.ingredients = vm.selectedIngredients;
+    vm.selectedIngredient_ids = vm.selectedIngredients.map(function(a) {
+      return a.id;
+    });
+    vm.recipe.ingredient_ids = vm.selectedIngredient_ids;
 
     if (vm.addRecipeForm.$valid) {
       Recipe
