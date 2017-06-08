@@ -13,6 +13,10 @@
   <body ng-controller="MainCtrl as main">
     <header>
       <ul>
+        <li ng-show="main.user" class="homeButtonContainer relative">
+          <a ui-sref="home"><img class="homeButtonBackground br-100 absolute" src="images/ColourWave.gif">
+          <img class="homeButton absolute" src="/images/HomeButton.png"></a>
+        </li>
         <li ng-show="main.user">
           <p>Welcome, {{ main.user.username }}</p>
         </li>

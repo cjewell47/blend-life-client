@@ -56,6 +56,10 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
     const mix = ColorMix.mix(colors, percents);
     vm.combinationColor = `${mix.red}, ${mix.green}, ${mix.blue}`;
     console.log(vm.combinationColor );
+
+    if(vm.selectedIngredients.length === 0) {
+      vm.combinationColor = '255, 255, 255';
+    }
   }
 
   function recipeCreate(){
