@@ -3,3 +3,22 @@
 .selected {
   background: yellow;
 }
+
+
+.recipeLogoContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  .recipeLogo {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+  }
+  .recipeLogoColour {
+    position: absolute;
+    height: 220px;
+    width: 100px;
+    left: 20%;
+    top: 10%;
+  }
+}
