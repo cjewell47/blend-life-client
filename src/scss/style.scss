@@ -22,3 +22,21 @@
     top: 10%;
   }
 }
+
+.homeLogoContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  .homeLogo {
+    height: 550px;
+    width: 300px;
+    position: absolute;
+  }
+  .homeLogoBackground {
+    position: absolute;
+    height: 300px;
+    width: 230px;
+    left: 0;
+    top: 10%;
+  }
+}
