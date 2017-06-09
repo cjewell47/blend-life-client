@@ -35,6 +35,8 @@
     <div class="recipeLogoContainer relative">
       <div style="background-color: rgb({{ vm.combinationColor }})" class="recipeLogoColour ma3 absolute">
       </div>
+      <div ng-if="vm.selectedIngredients.length === 0" style="background-color: rgb(255, 255, 255)" class="recipeLogoWhite ma3 absolute">
+      </div>
       <img class="recipeLogo absolute" src="../images/SmoothieLogo.png">
     </div>
 
