@@ -1,9 +1,9 @@
 // Import all of your scss files here
 @import 'helpers/variables';
 
-.selected {
-  background: yellow;
-}
+// .selected {
+//   background: yellow;
+// }
 
 body {
 background: $primary-background-color;
@@ -114,5 +114,10 @@ ul {
     width: 200px;
     left: 0;
     top: 0;
+    display: none;
   }
+
+  // .ingredientLogo:hover + .ingredientLogoBackground {
+  //   display: inline-block;
+  // }
 }

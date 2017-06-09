@@ -67,6 +67,7 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
       return a.id;
     });
     vm.recipe.ingredient_ids = vm.selectedIngredient_ids;
+    vm.recipe.colour         = vm.combinationColor;
 
     if (vm.addRecipeForm.$valid) {
       Recipe

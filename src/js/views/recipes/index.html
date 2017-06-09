@@ -4,6 +4,11 @@
   <li ng-repeat="recipe in vm.recipes">
     <p><a ui-sref="recipeShow({ id: recipe.id })">{{ recipe.name }}</a></p>
     <p>{{ recipe.description }}</p>
+    <div class="recipeLogoContainer relative">
+      <div style="background-color: rgb({{ recipe.colour }})" class="recipeLogoColour ma3 absolute">
+      </div>
+      <img class="recipeLogo absolute" src="../images/SmoothieLogo.png">
+    </div>
     <p>Ingredients:</p> <ul>
       <li ng-repeat="ingredient in recipe.ingredients">
       <p>{{ ingredient.name }}</p></li>

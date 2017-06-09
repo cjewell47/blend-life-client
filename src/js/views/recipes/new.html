@@ -24,12 +24,13 @@
       <label for="ingredients">ingredients</label>
       <ul>
         <li ng-repeat="ingredient in vm.ingredients" ng-click="IsClickEnable||vm.selectIngredient($event, ingredient)" class="ingredientLogoContainer relative" ng-class="{ selected: vm.selectedIngredients.indexOf(ingredient) !== -1 }">
-          <div class="ingredientLogoBackground absolute" style="background-color: rgb({{ ingredient.colour }})">
+          <div class="ingredientLogoBackground absolute" style="background-color: rgb({{ ingredient.colour }})" ng-style="myStyle"  >
           </div>
-          <img class="ingredientLogo absolute" ng-src="{{ ingredient.image }}" alt="picture of {{ ingredient.image }}">
+          <img class="ingredientLogo absolute" ng-src="{{ ingredient.image }}" alt="picture of {{ ingredient.image }}" ng-mouseenter="myStyle={'display': 'block' }" ng-mouseleave="myStyle={'display':'none'}">
         </li>
       </ul>
     </div>
+    <!-- style="background-color: rgb({{ ingredient.colour }})" -->
 
 
     <div class="recipeLogoContainer relative">
