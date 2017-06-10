@@ -99,22 +99,61 @@ ul {
   border: 0;
 }
 
-.ingredientLogoContainer {
-  // position: relative;
-  width: 200px;
-  height: 200px;
-  .ingredientLogo {
-    height: 200px;
-    width: 200px;
-    // position: absolute;
-  }
-  .ingredientLogoBackground {
-    // position: absolute;
-    height: 200px;
-    width: 200px;
-    left: 0;
-    top: 0;
-    display: none;
-  }
-
+.ingredientLogoBorder {
+  width: 142px;
+  height: 142px;
+  border-radius: 142px;
+  opacity: 0%;
 }
+.ingredientLogoContainer {
+   // position: relative;
+   width: 130px;
+   height: 130px;
+   border-radius: 130px;
+   background-color: $primary-background-color;
+   top: -140px;
+   left: 6px;
+   // display: block;
+   .ingredientLogo {
+     height: 90px;
+     width: 90px;
+     left: 16%;
+     top: 18%;
+     // border-radius: 90px;
+     // position: absolute;
+   }
+   .ingredientLogoBackground {
+     // position: absolute;
+     height: 90px;
+     width: 90px;
+     left: 16%;
+     top: 18%;
+     display: none;
+     // border-radius: 90px;
+   }
+ }
+
+ .recipeIndexLogoContainer {
+   // position: relative;
+   width: 220px;
+   height: 220px;
+   .recipeIndexLogo {
+     height: 200px;
+     width: 200px;
+     // position: absolute;
+   }
+   .recipeIndexLogoColour {
+     // position: absolute;
+     height: 120px;
+     width: 90px;
+     left: 14%;
+     top: 10%;
+   }
+ }
+
+ .indexUserImage {
+   height: 140px;
+   width: 140px;
+   border-radius: 140px;
+   border: 3px solid black;
+ }

@@ -27,7 +27,6 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
       return new ColorMix.Color(arr[0], arr[1], arr[2]);
     });
 
-    // const percents = new Array(colors.length).fill(100 / colors.length);
     let percents = [];
     if(colors.length === 6) {
       percents = [17.5, 16.5, 16.5, 16.5, 16.5, 16.5];
@@ -36,20 +35,6 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
     } else {
       percents = new Array(colors.length).fill(100 / colors.length);
     }
-    // const percentageOfEach = parseFloat(100/colors.length);
-    // console.log('percentageOfEach*colors.length:', percentageOfEach*colors.length);
-    // if (100 === percentageOfEach*colors.length) {
-    //   percents = new Array(colors.length).fill(100 / colors.length);
-    // } else {
-    //   const remainder = 100-parseFloat(percentageOfEach*colors.length);
-    //   const percentageOfLast = percentageOfEach+remainder;
-    //   console.log('remainder:', remainder);
-    //   console.log('percentageOfLast:', percentageOfLast);
-    //   console.log('percentageOfEach:', percentageOfEach);
-    //   percents = new Array(colors.length-1).fill(100 / colors.length);
-    //   percents.push(percentageOfLast);
-    // }
-
     console.log(percents);
 
 
