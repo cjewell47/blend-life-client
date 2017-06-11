@@ -24,12 +24,11 @@ function RecipeShowCtrl (Recipe, $stateParams, Comment) {
       })
       .$promise
       .then(() => {
-        // $state.go('recipeIndex');
-        vm.selectedIngredients = [];
       })
       .catch(err => {
         console.log(err);
       });
+    location.reload(true);
   }
 
 

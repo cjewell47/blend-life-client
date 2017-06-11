@@ -1,13 +1,14 @@
 // Import all of your scss files here
 @import 'helpers/variables';
+@import 'components/nav';
 
 // .selected {
 //   background: yellow;
 // }
 
-body {
-background: $primary-background-color;
-}
+// body {
+// background: $primary-background-color;
+// }
 
 main {
   background: white; /* For browsers that do not support gradients */
@@ -17,8 +18,20 @@ main {
   background: linear-gradient(to bottom right, white, pink); /* Standard syntax */
 }
 
+.homeTitle {
+  font-size: 32px;
+}
+
+body {
+  font-family: 'Comfortaa', cursive;
+}
+
 ul {
   list-style: none;
+}
+
+h1 {
+  margin-top: 0;
 }
 
 
@@ -72,31 +85,6 @@ ul {
     border-radius: 620px;
     background: $primary-background-color;
   }
-}
-
-.homeButtonContainer {
-  // position: relative;
-  width: 90px;
-  height: 90px;
-  .homeButton {
-    height: 90px;
-    width: 90px;
-    // position: absolute;
-  }
-  .homeButtonBackground {
-    // position: absolute;
-    height: 86px;
-    width: 86px;
-    left: 0;
-    top: 0;
-  }
-}
-
-.homeButtonContainer:hover {
-  -ms-transform: rotate(12deg); /* IE 9 */
-  -webkit-transform: rotate(12deg); /* Chrome, Safari, Opera */
-  transform: rotate(12deg);
-  border: 0;
 }
 
 .ingredientLogoBorder {
