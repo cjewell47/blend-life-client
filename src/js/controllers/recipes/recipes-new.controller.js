@@ -8,12 +8,13 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window, $scope) {
 
   const ColorMix = $window.ColorMix;
 
-  vm.IsClickEnable = true;
+  vm.IsClickEnable       = true;
   vm.combinationColor    = null;
   vm.selectedIngredients = [];
   vm.ingredients         = Ingredient.query();
   vm.create              = recipeCreate;
   vm.selectIngredient    = selectIngredient;
+
   $scope.myStyle2        = {'opacity': '0'};
 
   function selectIngredient(event, ingredient) {
@@ -57,17 +58,17 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window, $scope) {
 
     if (vm.addRecipeForm.$valid) {
       Recipe
-      .save({
-        recipe: vm.recipe
-      })
-      .$promise
-      .then(() => {
-        $state.go('recipeIndex');
-        vm.selectedIngredients = [];
-      })
-      .catch(err => {
-        console.log(err);
-      });
+        .save({
+          recipe: vm.recipe
+        })
+        .$promise
+        .then(() => {
+          $state.go('recipeIndex');
+          vm.selectedIngredients = [];
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 }

@@ -8,3 +8,15 @@
     </ul>
     <p>Submitted by: {{ vm.recipe.user.username }}</p>
     <img ng-src="{{ vm.recipe.user.image }}">
+    <p>Comments:</p>
+    <ul>
+      <li ng-repeat="comment in vm.recipe.comments">
+      <img class="commentUserImage" ng-src="{{ comment.user.image }}"><p>{{ comment.user.username }}:</p>
+      <p>{{ comment.body }}</p>
+      </li>
+    </ul>
+
+    <form class="measure center" ng-submit="vm.createComment()">
+      <textarea name="comment" rows="8" cols="80" placeholder="Add a comment to this recipe..." ng-model="vm.comment.body"></textarea>
+      <input type="submit" value="Submit" />
+    </form>
