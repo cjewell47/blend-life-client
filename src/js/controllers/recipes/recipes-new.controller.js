@@ -2,8 +2,8 @@ angular
   .module('BlendLife')
   .controller('RecipeNewCtrl', RecipeNewCtrl);
 
-RecipeNewCtrl.$inject = ['Recipe', '$state', 'Ingredient', '$window'];
-function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
+RecipeNewCtrl.$inject = ['Recipe', '$state', 'Ingredient', '$window', '$scope'];
+function RecipeNewCtrl (Recipe, $state, Ingredient, $window, $scope) {
   const vm = this;
 
   const ColorMix = $window.ColorMix;
@@ -14,6 +14,7 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window) {
   vm.ingredients         = Ingredient.query();
   vm.create              = recipeCreate;
   vm.selectIngredient    = selectIngredient;
+  $scope.myStyle2        = {'opacity': '0'};
 
   function selectIngredient(event, ingredient) {
     if(vm.selectedIngredients.length < 8 || vm.selectedIngredients.indexOf(ingredient) !== -1) {
