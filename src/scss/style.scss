@@ -1,6 +1,8 @@
 // Import all of your scss files here
 @import 'helpers/variables';
+
 @import 'components/nav';
+@import 'components/home';
 
 // .selected {
 //   background: yellow;
@@ -16,6 +18,7 @@ main {
   background: -o-linear-gradient(bottom right, white, pink); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(bottom right, white, pink); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, white, pink); /* Standard syntax */
+  height: 200vh;
 }
 
 .homeTitle {
@@ -59,33 +62,6 @@ h1 {
   }
 }
 
-.homeLogoContainer {
-  // position: relative;
-  width: 300px;
-  height: 620px;
-  background: $primary-background-color;
-  // border-radius: 600px;
-  .homeLogo {
-    height: 550px;
-    width: 300px;
-    left: 10;
-    top: 5%;
-    // position: absolute;
-  }
-  .homeLogoBackground {
-    // position: absolute;
-    height: 300px;
-    width: 230px;
-    left: 0;
-    top: 10%;
-  }
-  .homeCircle {
-    height: 620px;
-    width: 620px;
-    border-radius: 620px;
-    background: $primary-background-color;
-  }
-}
 
 .ingredientLogoBorder {
   width: 142px;
