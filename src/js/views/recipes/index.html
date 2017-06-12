@@ -1,9 +1,12 @@
-<h1>Our Recipes</h1>
+<h1 class="pageTitle">Our Recipes</h1>
 
-<input type="text" class="search" ng-model="vm.search" placeholder="Search recipes by ingredient...">
+<div class="searchBox">
+    <input type="text" class="search" ng-model="vm.search" placeholder="Search recipes by ingredient...">
+</div>
 
-<ul>
-  <li ng-repeat="recipe in vm.filtered">
+
+<ul class="w-100 recipeIndex">
+  <li ng-repeat="recipe in vm.filtered" class="db fl w-third pa2">
     <p><a ui-sref="recipeShow({ id: recipe.id })">{{ recipe.name }}</a></p>
     <p>{{ recipe.description }}</p>
     <div class="recipeIndexLogoContainer relative">
