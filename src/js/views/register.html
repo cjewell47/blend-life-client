@@ -1,53 +1,53 @@
 <div>
-<h1 class="pageTitle">Register</h1>
-<form name="vm.registerForm" ng-submit="vm.register()" novalidate class="measure center">
-  <fieldset  class="ba b--transparent ph0 mh0">
-    <legend class="f4 fw6 ph0 mh0">Enter your login details here</legend>
-  <div class="mt3 bb">
-    <label for="name">Username</label><br>
-    <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="Username" required>
-  </div>
+  <h1 class="pageTitle">Register</h1>
+  <form name="vm.registerForm" ng-submit="vm.register()" novalidate class="measure center">
+    <fieldset  class="ba b--transparent ph0 mh0">
+      <legend class="f4 fw6 ph0 mh0">Enter your login details here</legend>
+      <div class="mt3 bb">
+        <label for="name">Username</label><br>
+        <input class="pa2 input-reset ba bg-white w-100" type="text" name="username" ng-model="vm.user.username" placeholder="Username" required>
+      </div>
 
-  <div class="ng-message-error" ng-messages="vm.registerForm.username.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.username.$touched)">
-    <p ng-message="required">A username is required!</p>
-  </div>
+      <div class="ng-message-error" ng-messages="vm.registerForm.username.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.username.$touched)">
+        <p class="red" ng-message="required">A username is required!</p>
+      </div>
 
-<div class="form-group">
-  <label for="image">Image</label><br>
-  <input class="form-control" type="text" name="image" ng-model="vm.user.image" placeholder="copy image url here...">
-  </div>
+      <div class="mt3 bb">
+        <label for="image">Image</label><br>
+        <input class="pa2 input-reset ba bg-white w-100" type="text" name="image" ng-model="vm.user.image" placeholder="copy image url here...">
+      </div>
 
-  <div class="form-group">
-    <label for="name">Email</label><br>
-    <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="e.g. lebron@james.com" required ng-pattern="vm.emailValidate">
-  </div>
+      <div class="mt3 bb">
+        <label for="name">Email</label><br>
+        <input class="pa2 input-reset ba bg-white w-100" type="email" name="email" ng-model="vm.user.email" placeholder="e.g. lebron@james.com" required ng-pattern="vm.emailValidate">
+      </div>
 
-  <div class="ng-message-error" ng-messages="vm.registerForm.email.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.email.$touched)">
-    <p ng-message="required">An email address is required!</p>
-    <p ng-message="pattern">That is not a valid email address</p>
-  </div>
+      <div class="ng-message-error" ng-messages="vm.registerForm.email.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.email.$touched)">
+        <p class="red" ng-message="required">An email address is required!</p>
+        <p class="red" ng-message="pattern">That is not a valid email address</p>
+      </div>
 
-  <div class="form-group">
-    <label for="name">Password</label><br>
-    <input class="form-control"  type="password" name="password" ng-model="vm.user.password" placeholder="at least 6 characters" required ng-minlength="6">
-  </div>
+      <div class="mt3 bb">
+        <label for="name">Password</label><br>
+        <input class="pa2 input-reset ba bg-white w-100"  type="password" name="password" ng-model="vm.user.password" placeholder="at least 6 characters" required ng-minlength="6">
+      </div>
 
-  <div class="ng-message-error" ng-messages="vm.registerForm.password.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.password.$touched)">
-    <p ng-message="required">An password is required!</p>
-    <p ng-message="minlength">Your password must be at least 6 characters</p>
-  </div>
+      <div class="ng-message-error" ng-messages="vm.registerForm.password.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.password.$touched)">
+        <p class="red" ng-message="required">An password is required!</p>
+        <p class="red" ng-message="minlength">Your password must be at least 6 characters</p>
+      </div>
 
-  <div class="form-group">
-    <label for="name">Password Confirmation</label><br>
-    <input class="form-control" type="password" name="password_confirmation" ng-model="vm.user.password_confirmation" placeholder="retype your password" required ng-pattern="vm.user.password">
-  </div>
+      <div class="mt3 bb">
+        <label for="name">Password Confirmation</label><br>
+        <input class="pa2 input-reset ba bg-white w-100" type="password" name="password_confirmation" ng-model="vm.user.password_confirmation" placeholder="retype your password" required ng-pattern="vm.user.password">
+      </div>
 
-  <div class="ng-message-error" ng-messages="vm.registerForm.password_confirmation.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.password_confirmation.$touched)">
-    <p ng-message="required">Please confirm your password</p>
-    <p ng-message="pattern">Your passwords must match</p>
-  </div>
+      <div class="ng-message-error" ng-messages="vm.registerForm.password_confirmation.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.password_confirmation.$touched)">
+        <p class="red" ng-message="required">Please confirm your password</p>
+        <p class="red" ng-message="pattern">Your passwords must match</p>
+      </div>
 
-  <input type="submit" value="Submit" />
-</fieldset>
-</form>
+      <input type="submit" value="Submit" class="pv3 bg-black white f4 f3-ns tc ba b--black grow pointer w-100 mb3"/>
+    </fieldset>
+  </form>
 </div>

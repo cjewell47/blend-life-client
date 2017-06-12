@@ -1,20 +1,18 @@
 <h1 class="pageTitle">Our Recipes</h1>
 
 <div class="searchBox">
-    <input type="text" class="search" ng-model="vm.search" placeholder="Search recipes by ingredient...">
+    <input type="text" class="pa2 input-reset bg-white w-40 b--black b--solid b1" ng-model="vm.search" placeholder="Search recipes by ingredient...">
 </div>
 
 
 <ul class="w-100 recipeIndex">
   <li ng-repeat="recipe in vm.filtered" class="db fl w-third pa2">
-    <p><a ui-sref="recipeShow({ id: recipe.id })">{{ recipe.name }} by <img class="mw2 indexUserImage" ng-src="{{ recipe.user.image }}" alt="Picture of {{ recipe.user.username }}"></a></p>
-    <p>{{ recipe.description }}</p>
+    <p><a ui-sref="recipeShow({ id: recipe.id })">{{ recipe.name }}</a><p>Submitted by: {{ recipe.user.username }}</p> <img class="w4 h4 br-100 b--black b--solid bw1" ng-src="{{ recipe.user.image }}" alt="Picture of {{ recipe.user.username }}"></p>
+    <p class="h3">{{ recipe.description }}</p>
     <div class="recipeIndexLogoContainer relative">
       <div style="background-color: rgb({{ recipe.colour }})" class="recipeIndexLogoColour ma3 absolute">
       </div>
       <img class="recipeIndexLogo absolute" src="../images/SmoothieLogo.png">
     </div>
-    <p>Submitted by: {{ recipe.user.username }}</p>
-
   </li>
 </ul>
