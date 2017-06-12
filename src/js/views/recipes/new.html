@@ -1,29 +1,44 @@
-<div>
-  <h1>Submit a recipe</h1>
+<div class="">
+
+
+<div class="pa4 black-80">
 
   <form name="vm.addRecipeForm" ng-submit="vm.create()" novalidate class="measure center">
-    <div class="form-group">
-      <label for="name">Name</label><br>
-      <input class="form-control" type="text" name="name" ng-model="vm.recipe.name" placeholder="Name of your recipe..." required>
+    <fieldset  class="ba b--transparent ph0 mh0">
+      <legend class="f4 fw6 ph0 mh0">Submit a recipe</legend>
+
+    <div class="mt3 bb">
+      <label for="name" class="db fw6 lh-copy f6 bb">Name</label><br>
+      <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name" ng-model="vm.recipe.name" placeholder="Name of your recipe..." required>
     </div>
 
     <div class="ng-message-error" ng-messages="vm.addRecipeForm.name.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.name.$touched)">
       <p ng-message="required">Recipes need to have a name</p>
     </div>
 
-    <div class="form-group">
-      <label for="description">Description</label><br>
-      <textarea type="text" id="description" name="description" ng-model="vm.recipe.description" class="form-control" placeholder="Write the description of your recipe here" required></textarea>
+    <div class="mv3 bb">
+      <label for="description" class="db fw6 lh-copy f6 bb">Description</label><br>
+      <textarea type="text" id="description" name="description" ng-model="vm.recipe.description" class="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"  placeholder="Write the description of your recipe here" required></textarea>
     </div>
 
     <div class="ng-message-error" ng-messages="vm.addRecipeForm.description.$error" ng-show="(vm.addRecipeForm.$submitted || vm.addRecipeForm.description.$touched)">
       <p ng-message="required">Recipes need to have a description!</p>
     </div>
+ </fieldset>
+    <input type="submit" class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" value="Submit" />
 
-    <div class="form-group">
-      <label for="ingredients">ingredients</label>
-      <ul>
-        <li ng-repeat="ingredient in vm.ingredients">
+    <div class="recipeLogoContainer absolute">
+      <div style="background-color: rgb({{ vm.combinationColor }})" class="recipeLogoColour ma3 absolute">
+      </div>
+      <div ng-if="vm.selectedIngredients.length === 0" style="background-color: rgb(255, 255, 255)" class="recipeLogoWhite ma3 absolute">
+      </div>
+      <img class="recipeLogo absolute" src="../images/SmoothieLogo.png">
+    </div>
+
+    <div class="form-group ingredientList">
+      <label for="ingredients">Add some ingredients:</label>
+      <ul class="w-100">
+        <li class="db fl w-third pa3" ng-repeat="ingredient in vm.ingredients">
         <p>{{ ingredient.name }}</p>
         <img src="/images/ColourWave.gif" class="ingredientLogoBorder relative" ng-style="myStyle2">
           <div  ng-click="IsClickEnable||vm.selectIngredient($event, ingredient)" class="ingredientLogoContainer relative" ng-class="{ selected: vm.selectedIngredients.indexOf(ingredient) !== -1 }" ng-mouseenter="myStyle={'display': 'block' }; myStyle2={'opacity': '100%'}" ng-mouseleave="myStyle={'display':'none'}; myStyle2={'opacity': '0'}">
@@ -35,15 +50,6 @@
       </ul>
     </div>
 
-    <div class="recipeLogoContainer relative">
-      <div style="background-color: rgb({{ vm.combinationColor }})" class="recipeLogoColour ma3 absolute">
-      </div>
-      <div ng-if="vm.selectedIngredients.length === 0" style="background-color: rgb(255, 255, 255)" class="recipeLogoWhite ma3 absolute">
-      </div>
-      <img class="recipeLogo absolute" src="../images/SmoothieLogo.png">
-    </div>
-
-
-  <input type="submit" value="Submit" />
 </form>
+</div>
 </div>

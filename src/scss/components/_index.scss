@@ -1,0 +1,24 @@
+.recipeIndexLogoContainer {
+  // position: relative;
+  width: 220px;
+  height: 220px;
+  .recipeIndexLogo {
+    height: 200px;
+    width: 200px;
+    // position: absolute;
+  }
+  .recipeIndexLogoColour {
+    // position: absolute;
+    height: 120px;
+    width: 90px;
+    left: 14%;
+    top: 10%;
+  }
+}
+
+.indexUserImage {
+  height: 140px;
+  width: 140px;
+  border-radius: 140px;
+  border: 3px solid black;
+}

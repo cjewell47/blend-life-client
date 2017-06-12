@@ -1,42 +1,18 @@
 // Import all of your scss files here
 @import 'helpers/variables';
+@import 'helpers/mixins';
+
+@import 'partials/base';
 
 @import 'components/nav';
 @import 'components/home';
 @import 'components/footer';
+@import 'components/new';
+@import 'components/index';
+@import 'components/show';
 
-// .selected {
-//   background: yellow;
-// }
 
-// body {
-// background: $primary-background-color;
-// }
 
-main {
-  background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, white, pink); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, white, pink); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, white, pink); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, white, pink); /* Standard syntax */
-  // height: 200vh;
-  flex: 1 0 auto;
-}
-
-.homeTitle {
-  font-size: 32px;
-}
-
-html, body {
-  height: 100%;
-
-}
-
-body {
-  font-family: 'Comfortaa', cursive;
-  display: flex;
-  flex-direction: column;
-}
 
 ul {
   list-style: none;
@@ -45,95 +21,3 @@ ul {
 h1 {
   margin-top: 0;
 }
-
-
-.recipeLogoContainer {
-  // position: relative;
-  width: 400px;
-  height: 400px;
-  .recipeLogo {
-    height: 300px;
-    width: 300px;
-    // position: absolute;
-  }
-  .recipeLogoColour {
-    // position: absolute;
-    height: 220px;
-    width: 100px;
-    left: 20%;
-    top: 10%;
-  }
-  .recipeLogoWhite {
-    height: 220px;
-    width: 100px;
-    left: 20%;
-    top: 10%;
-  }
-}
-
-
-.ingredientLogoBorder {
-  width: 142px;
-  height: 142px;
-  border-radius: 142px;
-  // opacity: 0%;
-}
-.ingredientLogoContainer {
-   // position: relative;
-   width: 130px;
-   height: 130px;
-   border-radius: 130px;
-   background-color: $primary-background-color;
-   top: -140px;
-   left: 6px;
-   // display: block;
-   .ingredientLogo {
-     height: 90px;
-     width: 90px;
-     left: 16%;
-     top: 18%;
-     // border-radius: 90px;
-     // position: absolute;
-   }
-   .ingredientLogoBackground {
-     // position: absolute;
-     height: 90px;
-     width: 90px;
-     left: 16%;
-     top: 18%;
-     display: none;
-     // border-radius: 90px;
-   }
- }
-
- .recipeIndexLogoContainer {
-   // position: relative;
-   width: 220px;
-   height: 220px;
-   .recipeIndexLogo {
-     height: 200px;
-     width: 200px;
-     // position: absolute;
-   }
-   .recipeIndexLogoColour {
-     // position: absolute;
-     height: 120px;
-     width: 90px;
-     left: 14%;
-     top: 10%;
-   }
- }
-
- .indexUserImage {
-   height: 140px;
-   width: 140px;
-   border-radius: 140px;
-   border: 3px solid black;
- }
-
- .commentUserImage {
-   height: 75px;
-   width: 75px;
-   border-radius: 75px;
-   border: 1px solid black;
- }

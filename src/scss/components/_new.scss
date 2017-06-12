@@ -1,0 +1,70 @@
+.form {
+  width: 900px;
+}
+
+.ingredientList {
+  width: 900px;
+}
+
+
+.ingredientLogoBorder {
+  width: 142px;
+  height: 142px;
+  border-radius: 142px;
+  // opacity: 0%;
+}
+.ingredientLogoContainer {
+   // position: relative;
+   width: 130px;
+   height: 130px;
+   border-radius: 130px;
+   background-color: $primary-background-color;
+   top: -140px;
+   left: 6px;
+   // display: block;
+   .ingredientLogo {
+     height: 88px;
+     width: 88px;
+     left: 16%;
+     top: 18%;
+     // border-radius: 90px;
+     // position: absolute;
+   }
+   .ingredientLogoBackground {
+     // position: absolute;
+     height: 88px;
+     width: 88px;
+     left: 16%;
+     top: 18%;
+     display: none;
+     // border-radius: 90px;
+   }
+ }
+
+
+
+.recipeLogoContainer {
+  // position: relative;
+  width: 400px;
+  height: 400px;
+  left: 55%;
+  top: 10rem;
+  .recipeLogo {
+    height: 300px;
+    width: 300px;
+    // position: absolute;
+  }
+  .recipeLogoColour {
+    // position: absolute;
+    height: 220px;
+    width: 100px;
+    left: 20%;
+    top: 10%;
+  }
+  .recipeLogoWhite {
+    height: 220px;
+    width: 100px;
+    left: 20%;
+    top: 10%;
+  }
+}

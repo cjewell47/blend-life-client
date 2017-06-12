@@ -1,0 +1,19 @@
+main {
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, white, pink); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, white, pink); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, white, pink); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, white, pink); /* Standard syntax */
+  // @include linear-gradient(white, pink);
+  flex: 1 0 auto;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Comfortaa', cursive;
+  display: flex;
+  flex-direction: column;
+}
