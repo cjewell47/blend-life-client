@@ -1,7 +1,9 @@
 <div>
-<h1>Register</h1>
+<h1 class="pageTitle">Register</h1>
 <form name="vm.registerForm" ng-submit="vm.register()" novalidate class="measure center">
-  <div class="form-group">
+  <fieldset  class="ba b--transparent ph0 mh0">
+    <legend class="f4 fw6 ph0 mh0">Enter your login details here</legend>
+  <div class="mt3 bb">
     <label for="name">Username</label><br>
     <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="Username" required>
   </div>
@@ -46,5 +48,6 @@
   </div>
 
   <input type="submit" value="Submit" />
+</fieldset>
 </form>
 </div>

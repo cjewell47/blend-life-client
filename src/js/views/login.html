@@ -1,12 +1,15 @@
 <div>
-  <h1>Login</h1>
-  <form ng-submit="vm.login()">
-    <div class="form-group">
-      <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="Email">
-    </div>
-    <div class="form-group">
-      <input class="form-control" type="password" name="password" ng-model="vm.user.password" placeholder="Password">
-    </div>
-    <input type="submit" value="Submit">
+  <h1 class="pageTitle">Login</h1>
+  <form ng-submit="vm.login()" class="measure center">
+    <fieldset  class="ba b--transparent ph0 mh0">
+      <legend class="f4 fw6 ph0 mh0">Enter your login details here</legend>
+      <div class="mt3 bb">
+        <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email" ng-model="vm.user.email" placeholder="Email">
+      </div>
+      <div class="mv3 bb">
+        <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password" ng-model="vm.user.password" placeholder="Password">
+      </div>
+      <input type="submit" value="Submit" class="pv3 bg-black white f4 f3-ns tc ba b--black grow pointer w-100 mb3">
+    </fieldset>
   </form>
 </div>

@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>Blend Life</title>
   <base href="/">
-  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   <!-- inject:js -->
   <!-- endinject -->
@@ -13,38 +12,15 @@
 </head>
 <body ng-controller="MainCtrl as main">
   <header>
-    <!-- <ul class="nav">
-      <li ng-show="main.user" class="homeButtonContainer relative">
-        <a ui-sref="home"><img class="homeButtonBackground br-100 absolute" src="images/ColourWave.gif">
-          <img class="homeButton absolute" src="/images/HomeButton.png"></a>
-        </li>
-        <li ng-show="main.user">
-          <p>Welcome, {{ main.user.username }}</p>
-        </li>
-        <li ng-hide="main.user">
-          <a ui-sref="register">Sign Up</a>
-        </li>
-        <li ng-hide="main.user">
-          <a ui-sref="login" >Sign In</a>
-        </li>
-        <li ng-show="main.user">
-          <a ui-sref="recipeIndex">See our recipes</a>
-        </li>
-        <li ng-show="main.user">
-          <a ui-sref="recipeNew">Submit a recipe</a>
-        </li>
-        <li ng-show="main.user">
-          <a ng-click="main.logout()">Logout</a>
-        </li>
-      </ul> -->
-      <nav class="flex justify-between bb b--white-10">
+      <nav class="bb b--white-10">
       <div ng-show="main.user" class="homeButtonContainer relative no-underline flex pa3">
         <a ui-sref="home"><img class="homeButtonBackground br-100 absolute" src="images/ColourWave.gif">
           <img class="homeButton absolute" src="/images/HomeButton.png">
         </a>
       </div>
-      <h2 class="navTitle">Blend Life</h2>
-      <div class="flex-grow pa3 flex items-center">
+      <!-- class="navTitle" -->
+      <h2 class="dib">Blend Life</h2>
+      <div class="flex-grow pa3 fr">
         <a class="f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" ng-show="main.user" ui-sref="recipeIndex">See our recipes</a>
         <a class="f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" ng-show="main.user" ui-sref="recipeNew">Submit a recipe</a>
         <a class="f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" ng-show="main.user" ng-click="main.logout()">Logout</a>

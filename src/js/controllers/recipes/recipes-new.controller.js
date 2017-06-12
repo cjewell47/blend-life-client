@@ -15,7 +15,12 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window, $scope) {
   vm.create              = recipeCreate;
   vm.selectIngredient    = selectIngredient;
 
-  $scope.myStyle2        = {'opacity': '0'};
+  // $scope.myStyle2        = {'opacity': '0'};
+  if (vm.selectedIngredients.indexOf($scope.ingredient) !== -1) {
+    $scope.ingredient.colored = true;
+  }
+
+
 
   function selectIngredient(event, ingredient) {
     if(vm.selectedIngredients.length < 8 || vm.selectedIngredients.indexOf(ingredient) !== -1) {
@@ -37,12 +42,14 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window, $scope) {
     } else {
       percents = new Array(colors.length).fill(100 / colors.length);
     }
-    console.log(percents);
 
+    if (colors.length === 0) {
+      vm.combinationColor = null;
+      return;
+    }
 
     const mix = ColorMix.mix(colors, percents);
     vm.combinationColor = `${mix.red}, ${mix.green}, ${mix.blue}`;
-    console.log(vm.combinationColor );
 
     if(vm.selectedIngredients.length === 0) {
       vm.combinationColor = '255, 255, 255';
