@@ -2,8 +2,8 @@ angular
   .module('BlendLife')
   .controller('RecipeShowCtrl', RecipeShowCtrl);
 
-RecipeShowCtrl.$inject = ['Recipe', '$stateParams', 'Comment', '$rootScope'];
-function RecipeShowCtrl (Recipe, $stateParams, Comment, $rootScope) {
+RecipeShowCtrl.$inject = ['Recipe', '$stateParams', 'Comment'];
+function RecipeShowCtrl (Recipe, $stateParams, Comment) {
   const vm    = this;
   vm.createComment  = createComment;
 
@@ -19,7 +19,7 @@ function RecipeShowCtrl (Recipe, $stateParams, Comment, $rootScope) {
       });
   }
   getRecipe();
-  $rootScope.$on('New Comment', getRecipe);
+  // $rootScope.$on('New Comment', getRecipe);
 
   function createComment() {
     console.log('stateParams though', $stateParams);
@@ -30,12 +30,12 @@ function RecipeShowCtrl (Recipe, $stateParams, Comment, $rootScope) {
       })
       .$promise
       .then(() => {
-        $rootScope.$broadcast('New Comment');
+        getRecipe();
+        // $rootScope.$broadcast('New Comment');
       })
       .catch(err => {
         console.log(err);
       });
-    // location.reload(true);
   }
 
 
