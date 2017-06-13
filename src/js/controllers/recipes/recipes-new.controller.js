@@ -16,9 +16,9 @@ function RecipeNewCtrl (Recipe, $state, Ingredient, $window, $scope) {
   vm.selectIngredient    = selectIngredient;
 
   // $scope.myStyle2        = {'opacity': '0'};
-  if (vm.selectedIngredients.indexOf($scope.ingredient) !== -1) {
-    $scope.ingredient.colored = true;
-  }
+  // if (vm.selectedIngredients.indexOf($scope.ingredient) !== -1) {
+  //   $scope.ingredient.colored = true;
+  // }
 
 
 
