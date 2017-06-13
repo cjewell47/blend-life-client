@@ -86,5 +86,9 @@
     "jshint-stylish": "^2.2.1",
     "main-bower-files": "^2.13.1",
     "require-dir": "^0.3.1"
+  },
+  "engines": {
+    "node": ">=7.x",
+    "npm": "4.5.0"
   }
 }
