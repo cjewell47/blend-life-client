@@ -2,12 +2,13 @@
 
     <section>
       <p class="measure center">{{ vm.recipe.description }}</p>
-      <p class="measure center">Ingredients:</p>
       <div class="recipeIndexLogoContainer relative measure center">
         <div style="background-color: rgb({{ vm.recipe.colour }})" class="recipeIndexLogoColour ma3 absolute">
         </div>
         <img class="recipeIndexLogo absolute" src="../images/SmoothieLogo.png">
       </div>
+      <p class="w-100 measure center">Ingredients:</p>
+
       <ul class="w-100 measure center">
         <li class="db fl w-50 pa3" ng-repeat="ingredient in vm.recipe.ingredients">
           <p>{{ ingredient.name }}</p>
@@ -19,9 +20,9 @@
         </li>
       </ul>
     </section><br>
-    <section class="measure center owner w-100">
-      <p>Submitted by: {{ vm.recipe.user.username }}</p>
-      <img class="commentOwnerImage" ng-src="{{ vm.recipe.user.image }}">
+    <section class="measure center owner w-100 tc cb">
+      <!-- <p class=" measure center tc">Submitted by: {{ vm.recipe.user.username }}</p> -->
+      <img class=" tc commentOwnerImage" ng-src="{{ vm.recipe.user.image }}"><span class=" measure center tc">Submitted by: {{ vm.recipe.user.username }}</span>
     </section><br>
     <section class="measure center">
       <p class="measure center">Comments:</p>
