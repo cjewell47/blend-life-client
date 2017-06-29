@@ -1,64 +1,22 @@
-### Using this Angular Gulp Setup
+# Blend Life Front-end
 
-To get setup with the starter-code, you first need to run:
+#### WDI project 4
 
-```sh
-$ bower install && gulp install
-```
+Created by Charles Jewell
 
-## How is gulp setup?
+## Project overview
 
-Rather than trying to manage one giant `gulpfile.js` that is file responsible for creating multiple tasks, each task has been broken out into its own file and placed in a directory `tasks`. Any files in that directory get automatically required in the gulpfile using the `require-dir` npm package.
+This is the fron-end for my fourth WDI project. The app I built was Blend Life which was a platform for people to create and discuss smoothie recipes. 
 
-To add a new task, simply add a new task file that directory.
+![recipe submit page](http://i.imgur.com/nXECmG4.png)
 
-/tasks/default.js specifies the default set of tasks to run
-when you run `gulp`.
+## Project brief
 
-Configuration options are stored in the `package.json` file.
+Create a full stack application with a Ruby on Rails back-end and an AngularJS front-end. It is required to:
 
-When deploying, ensure that a `postinstall` script has been added to
-your package.json, e.g.
+* Connect your Rails back-end to an SQL database and interact with it
+* Create at least two models in the SQL database, one being a user model
+* Have user authentication where the user's details are stored in the User model in the database
+* Create API routes with CRUD functionality using Rails that are to be consumed by the AngularJS front-end
 
-```json
-"postinstall": "bower install && gulp deploy"
-```
-
-This setup expects that there is a bower.json file with at least ONE package
-installed. This will created a bower_components directory after
-the postinstall script has run.
-
-When deploying, this setup expects that the NODE_ENV is set to `production`.
-Also that the NPM_CONFIG_PRODUCTION is set to `false`. Then you can also set the API_URL to be the correct URL for your deployed app. This will automatically replace `http://localhost:4000` to be the correct url.
-
-You can do this by running:
-
-```bash
-$ heroku config:set NODE_ENV=production
-$ heroku config:set NPM_CONFIG_PRODUCTION=false
-
-# An example url
-$ heroku config:set API_URL=https://project-on-heroku.herokuapp.com/
-```
-
-### Bower overrides
-
-Sometimes, you might want to `override` the `main` file(s) for a specific Bower component. You can do this directly inside the `bower.json` file like this:
-
-```json
-"overrides": {
-  "bootstrap": {
-    "main": [
-      "dist/css/bootstrap.css",
-      "dist/js/bootstrap.js",
-      "dist/fonts/*"
-    ]
-  },
-  "font-awesome": {
-    "main": [
-      "css/font-awesome.css",
-      "fonts/*"
-    ]
-  }
-},
-```
+<HR>
