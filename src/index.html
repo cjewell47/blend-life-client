@@ -13,13 +13,13 @@
 <body ng-controller="MainCtrl as main">
   <header>
       <nav class="bb b--white-10">
-      <div ng-show="main.user" class="homeButtonContainer relative no-underline flex pa3">
+      <div class="homeButtonContainer relative no-underline flex pa3 fl">
         <a ui-sref="home"><img class="homeButtonBackground br-100 absolute" src="images/ColourWave.gif">
           <img class="homeButton absolute" src="/images/HomeButton.png">
         </a>
       </div>
       <!-- class="navTitle" -->
-      <h2 class="dib">Blend Life</h2>
+      <h2 class="dib fl mt4">Blend Life</h2>
       <div class="flex-grow pa3 fr">
         <a class="navButton f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" ng-show="main.user" ui-sref="recipeIndex">See our recipes</a>
         <a class="navButton f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" ng-show="main.user" ui-sref="recipeNew">Submit a recipe</a>
