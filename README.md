@@ -212,13 +212,9 @@ function selectIngredient(event, ingredient) {
 
 From the selected ingredients, I retrieved the RGB numbers that were stored within, and split them. The ColorMix required all the R's be placed in one array, then all the G's and all the B's. It then required another array determing how much weighting in of the original colours should have in the new colour. This always had to add up to 100 - exactly. In JavaScript this proved problematic for certain numbers. As I only needed 8 ingredients, I only had to come up with solutions for 6 and 7, which I hardcoded in (forgive me). This then gave me the combination colour which would display at the top of the page in the icon, and would change whenever new ingredients were selected or deselected. It would also become the colour property of the recipe upon its submission. Whenever the icon colour changed upon selection or deselection the view window would scroll up to it, to show the change in colour. As you can see from the section of code at the top of the function, only 8 ingredients can be selected and the clicking is disabled when that is reached, apart from selected ingredients which can then be deselected.
 
-![empty icon](http://i.imgur.com/ilh7mdI.png)
-
-This is before anything is selected.
-
 ![coloured icon](http://i.imgur.com/X3fUS5z.png)
 
-This is after some ingredients have been selected.
+This is after some (mostly orange coloured) ingredients have been selected.
 
 ### Recipe index
 
