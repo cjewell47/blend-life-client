@@ -165,7 +165,7 @@ The Recipe create function looked like this:
 
 The ingredient ids that are required are taken form the array of ingredient objects that are selected on the page, and the colour property is the mix of the colours that is displaying at the time of submission in the recipe icon with the ingredients that are selected at that time. The colour property can be seen when the icon of ingredient is hovered on, or once they have been clicked.
 
-![selecting ingredient](http://i.imgur.com/DLLUDju.png)
+![selecting ingredient](http://i.imgur.com/F3dRCkj.png)
 
 Carrot, cucumber and mango, that looks like an interesting combination!
 
