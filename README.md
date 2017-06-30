@@ -163,7 +163,11 @@ The Recipe create function looked like this:
   }
 ```
 
-Where the ingredient ids that are required are taken form the array of ingredient objects that are selected on the page, and the colour property is the mix of the colours that is displaying at the time of submission in the recipe icon with the ingredients that are selected at that time.
+The ingredient ids that are required are taken form the array of ingredient objects that are selected on the page, and the colour property is the mix of the colours that is displaying at the time of submission in the recipe icon with the ingredients that are selected at that time. The colour property can be seen when the icon of ingredient is hovered on, or once they have been clicked.
+
+![selecting ingredient](http://i.imgur.com/DLLUDju.png)
+
+Carrot, cucumber and mango, that looks like an interesting combination!
 
 #### Colour Mixing 
 
@@ -208,6 +212,14 @@ function selectIngredient(event, ingredient) {
 
 From the selected ingredients, I retrieved the RGB numbers that were stored within, and split them. The ColorMix required all the R's be placed in one array, then all the G's and all the B's. It then required another array determing how much weighting in of the original colours should have in the new colour. This always had to add up to 100 - exactly. In JavaScript this proved problematic for certain numbers. As I only needed 8 ingredients, I only had to come up with solutions for 6 and 7, which I hardcoded in (forgive me). This then gave me the combination colour which would display at the top of the page in the icon, and would change whenever new ingredients were selected or deselected. It would also become the colour property of the recipe upon its submission. Whenever the icon colour changed upon selection or deselection the view window would scroll up to it, to show the change in colour. As you can see from the section of code at the top of the function, only 8 ingredients can be selected and the clicking is disabled when that is reached, apart from selected ingredients which can then be deselected.
 
+![empty icon](http://i.imgur.com/ilh7mdI.png)
+
+This is before anything is selected.
+
+![coloured icon](http://i.imgur.com/X3fUS5z.png)
+
+This is after some ingredients have been selected.
+
 ### Recipe index
 
 On the index page, all recipes initially display. However, once something is typed into the search bar only recipes containing that ingredient (or ingredients containing that combination of letters) will display. I thought that this would make for a good user experience, as if many recipes were uploaded you wouldn't want to scroll through so many recipes, you would want to search for recipes containing ingredients you enjoy. The code for this looked like this:
@@ -235,6 +247,14 @@ Recipe
   vm.filterRecipes = filterRecipes;
   
 ```
+
+![empty search](http://i.imgur.com/JePvaeF.png)
+
+Nope.
+
+![search](http://i.imgur.com/GFtUkSW.png)
+
+Blueberry is a popular ingredient!
 
 ### Form validation
 
