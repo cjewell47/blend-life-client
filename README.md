@@ -300,6 +300,14 @@ To further develop my app, there are a few things I would like to add.
 * Users should be able to submit new ingredients, including choosing colours from a colour wheel that represent that ingredient.
 * Users should be able to rate recipes, and then filter by rating.
 
+## Check out the live app
+
+To see what the app looks like you can check it out [here](http://intense-dusk-18560.herokuapp.com/ "Blend life").
+
+If you would like to check out the API behind this app, you can view the repository [here](https://github.com/cjewell47/blend-life-api "Blend Life API").
+
+Thank you!
+
 
 
 
