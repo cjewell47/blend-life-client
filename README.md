@@ -6,7 +6,7 @@ Created by Charles Jewell
 
 ## Project overview
 
-This is the front-end for my fourth WDI project. The app I built was Blend Life which was a platform for people to create and discuss smoothie recipes. 
+This is the front-end for my fourth WDI project. The app is Blend life, which is a platform for people to create and discuss smoothie recipes. 
 
 If you would like to check out the API behind this app, you can view the repository [here](https://github.com/cjewell47/blend-life-api "Blend Life API").
 
