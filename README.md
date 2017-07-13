@@ -8,7 +8,7 @@ Created by Charles Jewell
 
 This is the front-end for my fourth WDI project. The app is Blend life, which is a platform for people to create and discuss smoothie recipes. 
 
-If you would like to check out the API behind this app, you can view the repository [here](https://github.com/cjewell47/blend-life-api "Blend Life API").
+If you would like to check out the API behind this app, you can view the repository [here](https://github.com/cjewell47/blend-life-api "Blend Life API") and read about it [here](https://github.com/cjewell47/blend-life-api/blob/master/README.md "Blend Life API ReadMe").
 
 
 ![recipe submit page](http://i.imgur.com/nXECmG4.png)
@@ -304,7 +304,7 @@ To further develop my app, there are a few things I would like to add.
 
 To see what the app looks like you can check it out [here](http://intense-dusk-18560.herokuapp.com/ "Blend life").
 
-If you would like to check out the API behind this app, you can view the repository [here](https://github.com/cjewell47/blend-life-api "Blend Life API").
+If you would like to check out the API behind this app, you can view the repository [here](https://github.com/cjewell47/blend-life-api "Blend Life API") and read about it [here](https://github.com/cjewell47/blend-life-api/blob/master/README.md "Blend Life API ReadMe").
 
 Thank you!
 
